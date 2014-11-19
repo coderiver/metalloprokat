@@ -1,66 +1,190 @@
-// # SHORT HOWTO
-// ## Sprites
-//     .whatever
-//          +sized-sprite($icons, coderiver) //or
-// 			+s(codedby) //gets default value for spritemap as $icons
-// ### animation example
-//     +include keyframes(rotate)
-//        from
-//           +rotate(0)
-//        to
-//           +rotate(360)
-// ## animation usage
-//     body:hover
-// 	    +animation(rotate 200s linear infinite)
-// ## animations easing, see easings.net for full list and examples, tnx @ai
-//     transition: all 1.2s ceaser($ease-in)
-// ## gradient example
-//     +background-image(linear-gradient(#232323, #5c5c5c));
-//     +g(#232323, #5c5c5c);
-//	   horizontal
-//     +gh(#232323, #5c5c5c);
-// ## making bw-images
-//     img
-//			@extend %gray
-// ## predefined media-queries: https://github.com/paranoida/sass-mediaqueries
-//     +min-screen(320)
-//			display: none
-// +max-screen(1000), +iphone5, +iphone4, +ipad-retina, +ipad, +hdpi - also available
-//
-// ## use cycles
-//     @for $i from 1 through 3
-//       .item-#{$i}
-//			width: 2em * $i;
-//     @each $s in a,b,c
-// 	    	#{$s}
-//				display: none
-// ## fonts 
-// Save fonts to /css/fonts, after that write (eot, woff, ttf):
-// +font(book, cytiapro-black-webfont)  
-// =book
-// 	font-family: "book", Arial, sans-serif 
-// insert pics into css
-// div
-// 	+pic("blabla.png")
-// span
-// 	+png(blabla)
-// p
-// 	+jpg(bla)
-
-
 body
-	font-family: Arial, sans-serif 
-	font-size: 12px 
+	font-family: 'Exo 2', sans-serif
+	font-size: 14px 
 	line-height: 1.4
 
 
+$orange: #fe662a
+
+=wrap
+	width: 980px
+	margin: 0 auto  
 // common blocks      
+.header
+	+clr
+	max-width: 1500px
+	margin: 0 auto 115px
+	background: rgba(#295189, 0.9)
+	height: 60px
+	&__tools
+		+clr
+		float: right
+		li
+			float: left
+			height: 60px
+			padding: 19px 30px 0
+			+box
+			border-left: 1px solid #426290
+			font-size: 15px
+			color: #fff 
+.catalog-link, .callback-link 
+	position: relative
+	display: inline-block
+	padding-left: 25px
+	font-size: 12px
+	text-decoration: none
+	text-transform: uppercase
+	color: #fff
+	+tr(opacity 200ms)
+	&:before
+		content: ""
+		position: absolute
+		top: 3px
+		left: 0
+		+s(catalog)
+	&:hover
+		opacity: 0.5
+.callback-link
+	&:before
+		+s(callback)				  
+.logo
+	position: relative 
+	float: left
+	margin-right: 30px
+	width: 180px
+	height: 60px
+	+gh(#ee6306, #e61e31) 
+	a
+		position: absolute
+		top: -35px
+		left: 37px
+		+hide-text
+		+s(logo)	
+.nav
+	float: left
+	ul
+		+clr
+	li
+		float: left
+		margin: 0 17px 
+		height: 60px
+		line-height: 60px
+		a
+			display: block
+			text-transform: uppercase
+			font-size: 12px
+			color: #fff
+			text-decoration: none
+			+tr(color 200ms)
+			&:hover
+				color: #8999b5		
+			&.is-active
+				color: #8999b5
 
-
-
-
-
-
+.topper
+	position: relative
+	padding-top: 37px
+	height: 760px
+	+box
+	background: url(../img/bg.jpg) 50% 0 no-repeat
+	background-size: 100% auto
+.title
+	text-align: center
+	color: #fff
+	text-transform: uppercase
+	margin-bottom: 135px
+	& > p
+		font-weight: 200
+		font-size: 36px  
+	& > h2
+		font-size: 60px
+		letter-spacing: 10px
+		margin-bottom: 20px
+	& > span
+		font-weight: 300
+		font-size: 14px  	  	
+.preview
+	+wrap
+	&__list
+		display: table
+		width: 100%
+		border-collapse: collapse
+	&__row
+		display: table-row
+	&__item		
+		position: relative
+		display: table-cell
+		border: 1px solid #eaeaea
+		text-align: center
+		background: #fff
+		&:hover
+			.preview__img
+				img
+					opacity: 0.5
+			.preview__title
+				+transform(translateY(-90px))
+			.preview__descr
+				visibility: visible
+				opacity: 1
+			.preview__request
+				visibility: visible
+				opacity: 1
+		&.last
+			border-collapse: separate
+			width: 166px
+			background: none
+			+gh(rgba(#f60, 0.95), rgba(#f71d2e, 0.95))
+			border-right-color: #f71d2e
+			border-top-color: #f14417
+			border-bottom-color: #f14417
+			+box
+			padding: 27px 15px
+			vertical-align: top
+			text-align: left
+			text-decoration: none
+			.arr-right
+				margin-bottom: 20px
+			& > div
+				margin-bottom: 25px
+				font-size: 14px
+				text-transform: uppercase
+				color: #fff
+			& > p
+				color: #fab6a6 	  
+	&__img
+		position: relative
+		display: block
+		padding-top: 20px
+		text-decoration: none
+		font-size: 0
+	&__title
+		min-height: 52px
+		padding: 20px 0 0
+		color: #1b3349
+		font-weight: 700
+		font-size: 14px
+		text-transform: uppercase
+		+tr(transform 200ms)
+	&__request
+		visibility: hidden
+		opacity: 0
+		position: absolute
+		bottom: 10px
+		left: 10px
+		right: 10px
+		height: 40px
+		line-height: 40px
+		background: #fe662a
+		font-size: 12px
+		text-transform: uppercase
+		text-decoration: none
+		color: #fff
+		+transition(opacity 200ms, background 200ms)	
+		&:hover
+			background: darken($orange, 5%)
+.arr-right
+	display: inline-block
+	+s(arr-right)
 
 
 
