@@ -1,8 +1,45 @@
 head.ready(function() {
 
-	// $(document).on("click", function(){
-	// 	$(".js-popup").hide();
-	// });
+// popups
 
-	console.log($('body').html());
+	$('.overlay i').on('click', function(){
+		$('.popup').removeClass('is-open');
+		$('.overlay').hide();
+		$('body').removeClass('no-scroll');
+	});
+
+	$('.popup__close').on('click', function(){
+		$(this).parent().removeClass('is-open');
+		$('.overlay').hide();
+		$('body').removeClass('no-scroll');
+	});
+	
+	$('.js-call').on('click', function(){
+		$('.overlay').show();
+		$('.popup_feedback').addClass('is-open');
+		$('body').addClass('no-scroll');
+		return false;
+	});
+
+	$('.js-order').on('click', function(){
+		$('.overlay').show();
+		$('.popup_order').addClass('is-open');
+		$('body').addClass('no-scroll');
+		return false;
+	});
+
+// validation
+	var form_validate = $('.js-validate');
+	if (form_validate.length) {
+		form_validate.each(function () {
+			var form_this = $(this);
+			$.validate({
+				form : form_this
+			});
+		});
+	};
+
+
+
+
 });

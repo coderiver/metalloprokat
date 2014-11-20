@@ -44,10 +44,105 @@ $red: #fb4218
 	&:hover
 		background: darken($orange, 5%) 
 
-
-
-
-
+//popups
+.overlay
+	position: fixed
+	top: 0
+	bottom: 0
+	right: 0
+	left: 0
+	padding: 50px 0 
+	overflow-y: auto
+	text-align: center
+	z-index: 999
+	i
+		position: fixed
+		top: 0
+		bottom: 0
+		right: 0
+		left: 0
+		background: rgba(#171717, 0.8)
+	&:before
+		content: ""
+		display: inline-block
+		width: 0
+		height: 100%
+		vertical-align: middle
+.popup
+	position: relative
+	vertical-align: middle
+	+box
+	background: #fff 
+	display: none
+	box-shadow: 0 0 19px 2px #000
+	&.is-open
+		display: inline-block
+	&.popup_feedback
+		width: 350px
+		padding: 40px 42px 74px
+	&.popup_order
+		width: 640px
+		padding: 44px 44px 56px
+		.btn
+			width: 228px
+	&__close
+		position: absolute
+		top: -38px
+		right: -38px
+		+s(close)
+		cursor: pointer
+.form
+	text-align: left
+	.btn
+		width: 100% 
+	&__row
+		margin-bottom: 15px
+	&__title
+		margin-bottom: 5px
+		font-weight: 500
+		font-size: 12px
+		text-transform: uppercase
+	&__bottom
+		text-align: center	
+	.col50
+		width: 48%
+		float: right
+		&:first-child
+			float: left	
+.input
+	width: 100% 		  		 		 
+	height: 30px
+	+box
+	padding: 0 10px
+	font-family: 'Exo 2', Arial, sans-serif
+	font-size: 14px
+	color: #000
+	background: #e8e8e8  
+	border: 1px solid #e8e8e8
+	+transition(background 200ms, border-color 200ms)
+	&:focus
+		border-color: #cdcdcd
+		background: #fff
+	&.error
+		background: #fff
+		border-color: #fe2a2a
+		color: #fe2a2a	 
+.textarea
+	+box
+	width: 100%
+	height: 60px
+	resize: none
+	padding: 5px 10px 
+	border: 1px solid #e8e8e8
+	background: #e8e8e8
+	font-family: 'Exo 2', Arial, sans-serif
+	font-size: 14px
+	+transition(background 200ms, border-color 200ms) 	 
+	&:focus
+		border-color: #cdcdcd
+		background: #fff
+.help-block
+	display: none		
 
 
 
