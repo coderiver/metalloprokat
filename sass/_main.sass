@@ -17,6 +17,10 @@
 			border-left: 1px solid #426290
 			font-size: 15px
 			color: #fff 
+			+r(1280)
+				padding: 19px 20px 0
+			+r(1100)
+				padding: 19px 10px 0 	 
 .catalog-link, .callback-link 
 	position: relative
 	display: inline-block
@@ -43,7 +47,9 @@
 	margin-right: 30px
 	width: 180px
 	height: 60px
-	+gh(#ee6306, #e61e31) 
+	+gh(#ee6306, #e61e31)
+	+r(1280)
+		margin-right: 10px 
 	a
 		position: absolute
 		top: -35px
@@ -59,6 +65,10 @@
 		margin: 0 17px 
 		height: 60px
 		line-height: 60px
+		+r(1280)
+			margin: 0 10px
+		+r(1100)
+			margin: 0 5px 	 
 		a
 			display: block
 			text-transform: uppercase
@@ -74,10 +84,12 @@
 .topper
 	position: relative
 	padding-top: 37px
-	height: 760px
+	height: 134px
 	+box
 	background: url(../img/bg.jpg) 50% 0 no-repeat
 	background-size: 100% auto
+	&.topper_index
+		height: 760px
 .title
 	text-align: center
 	color: #fff
@@ -285,6 +297,13 @@
 	+box
 	padding: 50px 0 70px 
 	background: #00335e url(../img/map.jpg) 50% 50% no-repeat
+	&__head
+		margin-bottom: 40px
+		font-size: 28px
+		font-weight: 300
+		text-transform: uppercase
+		color: #fff
+		text-align: center
 	&__subtitle
 		margin-bottom: 45px
 		text-align: center
@@ -377,7 +396,8 @@
 	p
 		color: $orange
 
-
+.content
+	overflow: hidden
 
 
 
