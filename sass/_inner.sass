@@ -1,0 +1,43 @@
+// styles for inner pages
+.article
+    margin-bottom: 65px
+    color: #1b3349
+    & > p
+        margin-bottom: 25px
+        line-height: 1.6 
+        span
+            font-size: 16px
+            font-weight: 300
+            color: #bababa
+    & > ul
+        margin-bottom: 20px
+        li
+            position: relative
+            margin-bottom: 10px
+            padding-left: 30px
+            color: #3f3f3f
+            &:before
+                content: ""
+                position: absolute
+                top: 7px
+                left: 0
+                width: 7px
+                height: 7px
+                background: $orange
+    & > img
+        float: left
+        margin: 10px 35px 35px 0                       
+        
+.economy
+    .h3
+        text-align: center
+    &__in
+        +clr
+        margin-left: -5%
+    &__col
+        float: left
+        width: 45%
+        margin-left: 5%
+    &__img
+        margin-bottom: 40px
+        text-align: center                        
