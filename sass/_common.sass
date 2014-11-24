@@ -260,7 +260,24 @@ $red: #fb4218
 			width: 7px
 			height: 7px
 			background: $orange
-
+.quotes
+	position: relative
+	padding-left: 42px
+	+box
+	&:before
+		content: ""
+		position: absolute
+		top: 0
+		left: 0
+		+s(quotes)
+	& > p
+		margin-bottom: 30px	
+	&__author
+		font-size: 16px
+		color: #a3a3a3	    			
+	&__status
+		font-size: 12px
+		color: #ddd
 
 
 
