@@ -39,7 +39,28 @@ head.ready(function() {
 		});
 	};
 
+// accordeon
+	
+	if ($('.js-accordeon').length) {
+		function accordeon(){
+			var item = $('.vacancy__content'),
+				title = $('.vacancy__title');
 
+			title.on('click', function(){
+				if (!$(this).hasClass('is-open')) {
+					title.removeClass('is-open');
+					item.slideUp();
+					$(this).addClass('is-open').next().slideDown();
+				}	
+				else{
+					title.removeClass('is-open');
+					item.slideUp();
+				}
+			});	
+
+		}
+		accordeon();
+	};
 
 
 });

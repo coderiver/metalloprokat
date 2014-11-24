@@ -59,3 +59,41 @@
         +tr(color 200ms)
         &:hover
             color: $orange                                     
+            
+// vacancy
+.vacancy
+    & > p
+        margin-bottom: 20px
+    .mail
+        margin-bottom: 40px                 
+    &__item
+        position: relative
+        margin-bottom: 35px
+    &__title
+        position: relative
+        display: inline-block
+        +nosel
+        color: #3f3f3f
+        border-bottom: 1px dotted 
+        cursor: pointer    
+        &:before
+            content: ""
+            position: absolute
+            top: 7px
+            right: -25px
+            +s(accordeon)
+            +tr(transform 200ms)
+        &:hover
+            color: $orange
+            &:before
+                +s(accordeon-h)
+        &.is-open
+            color: $orange
+            &:before
+                +s(accordeon-h)
+                +transform(rotate(180deg))
+    &__content
+        margin-top: 20px
+        background: #f6f6f6
+        +box
+        padding: 50px 55px 45px              
