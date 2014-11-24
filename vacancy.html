@@ -96,6 +96,7 @@
 											</ul>
 										</div>
 									</div>
+									<button type="button" class="btn js-vacancy">Откликнуться на вакансию</button>
 								</div>
 							</li>
 							<li class="vacancy__item">
@@ -121,6 +122,7 @@
 											</ul>
 										</div>
 									</div>
+									<button type="button" class="btn js-vacancy">Откликнуться на вакансию</button>
 								</div>
 							</li>
 							<li class="vacancy__item">
@@ -146,6 +148,7 @@
 											</ul>
 										</div>
 									</div>
+									<button type="button" class="btn js-vacancy">Откликнуться на вакансию</button>
 								</div>
 							</li>
 							<li class="vacancy__item">
@@ -171,6 +174,7 @@
 											</ul>
 										</div>
 									</div>
+									<button type="button" class="btn js-vacancy">Откликнуться на вакансию</button>
 								</div>
 							</li>
 						</ul>
@@ -268,6 +272,33 @@
 				</div>
 				<div class="form__bottom">
 					<button type="submit" class="btn">Перезвоните мне</button>
+				</div>
+			</form>
+		</div>
+	</div>
+	<div class="popup popup_vacancy">
+		<div class="popup__close"></div>
+		<h3 class="h3">Обратный звонок</h3>
+		<div class="form">
+			<form class="js-validate">
+				<div class="form__row">
+					<div class="form__title">Имя*</div>
+					<input type="text" class="input" name="company" data-validation="required">
+				</div>
+				<div class="form__row">
+					<div class="form__title">Телефон</div>
+					<input type="text" class="input" name="phone">
+				</div>
+				<div class="form__row">
+					<div class="form__title">e-mail*</div>
+					<input type="text" class="input" name="email" data-validation="email">
+				</div>
+				<div class="form__row">
+					<div class="form__title">Сообщение</div>
+					<textarea class="textarea" name="message"></textarea>
+				</div>
+				<div class="form__bottom">
+					<button type="submit" class="btn">откликнуться</button>
 				</div>
 			</form>
 		</div>

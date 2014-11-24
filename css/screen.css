@@ -50,6 +50,8 @@ body { font-family: "Exo 2", sans-serif; font-size: 14px; line-height: 1.4; min-
 .popup.popup_feedback { width: 350px; padding: 40px 42px 74px; }
 .popup.popup_order { width: 640px; padding: 44px 44px 56px; }
 .popup.popup_order .btn { width: 228px; }
+.popup.popup_vacancy { width: 350px; padding: 40px 42px 56px; }
+.popup.popup_vacancy .btn { font-size: 12px; }
 .popup__close { position: absolute; top: -38px; right: -38px; background: url('../img/icons-s6ad29c9b16.png') 0 -158px no-repeat; width: 32px; height: 32px; cursor: pointer; }
 
 .form { text-align: left; }
@@ -274,6 +276,7 @@ body { font-family: "Exo 2", sans-serif; font-size: 14px; line-height: 1.4; min-
 .vacancy__title.is-open { color: #fe662a; }
 .vacancy__title.is-open:before { background: url('../img/icons-s6ad29c9b16.png') 0 0 no-repeat; width: 12px; height: 8px; -moz-transform: rotate(180deg); -ms-transform: rotate(180deg); -webkit-transform: rotate(180deg); transform: rotate(180deg); }
 .vacancy__content { margin-top: 20px; background: #f6f6f6; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; padding: 50px 55px 45px; }
+.vacancy__content .btn { height: 40px; font-size: 12px; }
 
 .review { margin-bottom: 25px; }
 .review__item { *zoom: 1; margin-top: 45px; padding-bottom: 25px; border-bottom: 1px solid #e4e4e4; }

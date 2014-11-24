@@ -28,6 +28,13 @@ head.ready(function() {
 		return false;
 	});
 
+	$('.js-vacancy').on('click', function(){
+		$('.overlay').show();
+		$('.popup_vacancy').addClass('is-open');
+		$('body').addClass('no-scroll');
+		return false;
+	});
+
 // validation
 	var form_validate = $('.js-validate');
 	if (form_validate.length) {
