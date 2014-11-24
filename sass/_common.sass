@@ -195,8 +195,24 @@ $red: #fb4218
 				&:hover
 					text-decoration: underline	
 
-
-
+// pagination
+.pagination
+	+clr
+	& > ul
+		float: right
+		+clr
+		li
+			float: left
+			margin-left: 13px
+			a
+				display: block
+				text-decoration: none
+				color: #3f3f3f
+				+tr(color 200ms)
+				&:hover
+					color: $orange
+				&.is-active
+					color: $orange	
 
 
 
