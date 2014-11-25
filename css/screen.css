@@ -297,3 +297,5 @@ body { font-family: "Exo 2", sans-serif; font-size: 14px; line-height: 1.4; min-
 .review__content { float: right; width: 571px; }
 
 .parthners > p { color: #1b3349; margin-bottom: 80px; }
+
+.catalog { padding-top: 50px; margin-bottom: 60px; }
