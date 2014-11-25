@@ -69,5 +69,13 @@ head.ready(function() {
 		accordeon();
 	};
 
+// fancybox
+
+	$(".fancybox").fancybox({
+		openEffect	: 'none',
+		closeEffect	: 'none',
+		padding: 0
+	});	
+
 
 });
