@@ -77,5 +77,18 @@ head.ready(function() {
 		padding: 0
 	});	
 
+// submenu
+
+	$('.nav__item').hover(
+		function(){
+			$(this).find('.dropdown').addClass('is-open');
+			$(this).find('.nav__link').addClass('is-open');
+		},
+		function(){
+			$(this).find('.dropdown').removeClass('is-open');
+			$(this).find('.nav__link').removeClass('is-open');
+		}
+	)
+
 
 });

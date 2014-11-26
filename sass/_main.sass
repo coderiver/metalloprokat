@@ -1,6 +1,7 @@
 // Normally mainpage styles
 // common blocks      
 .header
+	position: relative 
 	+clr
 	max-width: 1500px
 	margin: 0 auto 115px
@@ -60,27 +61,72 @@
 	float: left
 	ul
 		+clr
-	li
+	&__item
 		float: left
-		margin: 0 17px 
 		height: 60px
-		line-height: 60px
+		line-height: 60px 	 
+	&__link
+		position: relative
+		display: block
+		padding: 0 17px 
+		text-transform: uppercase
+		font-size: 12px
+		color: #fff
+		text-decoration: none
+		+transition(color 200ms, background 200ms)
+		z-index: 101
 		+r(1280)
-			margin: 0 10px
+			padding: 0 10px
 		+r(1100)
-			margin: 0 5px 	 
-		a
-			display: block
-			text-transform: uppercase
-			font-size: 12px
-			color: #fff
-			text-decoration: none
-			+tr(color 200ms)
+			padding: 0 5px
+		&:hover
+			background: #fff
+			color: #254e84		
+		&.is-active
+			color: #8999b5
 			&:hover
-				color: #8999b5		
-			&.is-active
+				background: none
 				color: #8999b5
-
+		&.is-open
+			background: #fff
+			color: #254e84		
+.dropdown
+	visibility: hidden
+	opacity: 0
+	position: absolute
+	top: 60px
+	left: 180px
+	right: 0					  
+	background: #fff
+	z-index: 100
+	box-shadow: 0 1px 9px rgba(44,43,42,.34)
+	+tr(opacity 200ms)
+	+r(1500)
+		right: auto
+		width: 660px
+		.preview__row
+			display: block
+			+clr
+	&.is-open
+		visibility: visible
+		opacity: 1
+	.preview__item
+		height: 165px
+		width: 110px
+		border: none
+		+r(1500)
+			display: block
+			float: left
+		&:hover
+			.preview__title
+				+transform(translateY(0))
+				color: $orange
+	.preview__title
+		padding: 0
+		line-height: 1.2
+		font-size: 12px
+		font-weight: 500
+		+tr(color 200ms)   	
 .topper
 	position: relative
 	padding-top: 37px
@@ -162,6 +208,9 @@
 		padding-top: 20px
 		text-decoration: none
 		font-size: 0
+		img
+			max-width: 100%
+			+tr(opacity 200ms)
 	&__title
 		min-height: 52px
 		padding: 20px 0 0
