@@ -133,4 +133,30 @@ head.ready(function() {
 		});
 	});
 
+// map
+	
+  if ($('.map').length) {
+    ymaps.ready(function () {
+      var myMap = new ymaps.Map('YMapsID', {
+          center: [55.840975, 37.487421],
+          zoom: 16,
+          controls: []
+      });
+     // Создаем метку с помощью вспомогательного класса.
+        myPlacemark1 = new ymaps.Placemark([55.840975, 37.487421], {
+            // Свойства.
+            // Содержимое иконки, балуна и хинта.
+            balloonContent: 'Балун',
+            hintContent: 'г. Москва, ул. Кронштадтский бул., 7'
+        }, {
+            // Опции.
+            // Стандартная фиолетовая иконка.
+            preset: 'twirl#violetIcon'
+        });
+
+     myMap.geoObjects.add(myPlacemark1)
+
+    });
+  };	
+
 });
