@@ -128,4 +128,137 @@
         margin-bottom: 80px                                 
 .catalog
     padding-top: 50px
-    margin-bottom: 60px        
+    margin-bottom: 60px
+    
+// product
+.product
+    +clr
+    &__left
+        float: left
+        width: 234px
+        margin-right: 20px
+        text-align: center
+        .btn
+            height: 40px
+            font-size: 12px
+    &__img
+        margin-bottom: 20px
+    &__right
+        overflow: hidden
+        text-align: left
+        .h3
+            color: #3f3f3f!important
+            text-align: left
+    &__article
+        p
+            margin-bottom: 25px
+            font-size: 14px
+            color: #3f3f3f
+            strong
+                font-weight: 600
+        img
+            float: left
+            margin: 0 20px 20px 0                       
+    .h3
+        font-weight: 400
+        color: #000            
+// table
+.table
+    width: 582px
+    margin-bottom: 50px
+    &__header
+        position: relative
+        padding: 20px 18px 10px 
+        background: #f6f6f6
+        box-shadow: 0 6px 12px -3px #ccc
+        font-weight: 500
+        font-size: 15px                 
+    &__topper
+        +clr
+        border-bottom: 1px solid #e2e2e2
+        font-size: 14px
+        font-weight: 400
+        margin-bottom: 8px 
+        padding-bottom: 5px
+    &__row
+        +clr    
+    &__col50
+        float: left
+        width: 50%
+        text-align: center   
+    &__col33
+        float: left
+        width: 33.3%
+        text-align: center
+.tbody
+    overflow-y: auto            
+    height: 295px
+    +box
+    padding: 0 1px 0 18px
+    &__in
+        width: 100% 
+        & > li
+            height: 37px
+            line-height: 37px
+            border-bottom: 1px solid #e5e5e5 
+            font-size: 14px
+            font-weight: 300
+            color: #3f3f3f  
+            &:nth-child(2n)
+                background: #f6f6f6
+            .table__col33
+                +box
+                border-left: 1px solid #e5e5e5
+                &:first-child
+                    border-left: none                
+.tabs
+    border-top: 1px solid #eaeaea       
+    border-bottom: 1px solid #eaeaea
+    padding: 15px
+    margin-bottom: 40px
+    &__list
+        overflow: hidden
+        margin-left: -36px
+        li
+            position: relative
+            display: inline-block
+            margin-left: 36px
+            &:before
+                content: ""
+                position: absolute
+                top: 13px
+                right: -19px
+                width: 3px
+                height: 3px
+                border-radius: 50%
+                background: $orange
+            &:last-child
+                &:before
+                    display: none    
+            a
+                font-size: 15px
+                text-transform: uppercase
+                color: #3f3f3f
+                line-height: 2
+                text-decoration: none
+                &:hover
+                    color: $orange
+            &.is-active
+                a
+                    color: $orange
+                    text-decoration: underline        
+.chars
+    padding: 20px 37px 
+    margin-bottom: 40px
+    border: 1px solid #ffeccb
+    background: #fefdf0
+    &__row
+        +clr
+    &__left
+        float: left
+        width: 105px 
+        font-weight: 500
+        font-size: 14px
+    &__right
+        overflow: hidden
+        font-size: 14px                     
