@@ -1,5 +1,13 @@
 head.ready(function() {
 
+	setTimeout(function(){
+		$('.title').addClass('is-loaded');
+	}, 400);
+	setTimeout(function(){
+		$('.topper .preview').addClass('is-loaded');
+	}, 700);
+	
+
 // popups
 
 	$('.overlay i').on('click', function(){

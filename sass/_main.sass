@@ -136,11 +136,20 @@
 	background-size: 100% auto
 	&.topper_index
 		height: 760px
+	.preview
+		opacity: 0
+		+tr(opacity 300ms)
+		&.is-loaded
+			opacity: 1	
 .title
+	opacity: 0
+	+tr(opacity 300ms)
 	text-align: center
 	color: #fff
 	text-transform: uppercase
 	margin-bottom: 135px
+	&.is-loaded
+		opacity: 1
 	& > p
 		font-weight: 200
 		font-size: 36px  
