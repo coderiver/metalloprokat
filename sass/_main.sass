@@ -1,12 +1,30 @@
 // Normally mainpage styles
-// common blocks      
+// common blocks  
+.js-menu-shadow
+	position: absolute
+	top: 0
+	left: 0
+	bottom: 0
+	right: 0
+	background: #000   
+	opacity: 0      
+.header__wrap
+	height: 60px 
+	margin-bottom: 115px 
 .header
 	position: relative 
 	+clr
 	max-width: 1500px
-	margin: 0 auto 115px
+	margin: 0 auto 0
 	background: rgba(#295189, 0.9)
 	height: 60px
+	z-index: 20 
+	.is-fixedheader &
+		position: fixed
+		left: 0
+		top: 0
+		width: 100%   
+		right: 0 
 	&__tools
 		+clr
 		float: right
@@ -137,10 +155,13 @@
 	&.topper_index
 		height: 760px
 	.preview
-		opacity: 0
-		+tr(opacity 300ms)
-		&.is-loaded
-			opacity: 1	
+		// opacity: 0
+		// +transition(all 500ms)
+		// position: relative
+		// top: 100px 
+		// &.is-loaded
+		// 	opacity: 1	
+		// 	top: 0 
 .title
 	opacity: 0
 	+tr(opacity 300ms)
@@ -148,6 +169,8 @@
 	color: #fff
 	text-transform: uppercase
 	margin-bottom: 135px
+	z-index: 10
+	position: relative 
 	&.is-loaded
 		opacity: 1
 	& > p
@@ -169,14 +192,32 @@
 		display: table
 		width: 100%
 		border-collapse: collapse
+		-webkit-perspective: 1300px
+		-moz-perspective: 1300px
+		perspective: 1300px
 	&__row
 		display: table-row
+		-webkit-transform-style: preserve-3d
+		-moz-transform-style: preserve-3d
+		transform-style: preserve-3d
+		+transform(translateY(100%) rotateX(90deg))
+		+transform-origin(0 100%)
+		opacity: 0
+		+tr(all 0.3s ease-out)
+	&.is-loaded
+		.preview__row
+			+transform(translateY(0%) rotateX(0deg))
+			opacity: 1 
 	&__item		
 		position: relative
 		display: table-cell
-		border: 1px solid #eaeaea
+		// border: 1px solid #eaeaea
+		box-shadow: inset 1px 0 0 #eaeaea
 		text-align: center
 		background: #fff
+		// -webkit-transform-style: preserve-3d
+		// -moz-transform-style: preserve-3d
+		// transform-style: preserve-3d
 		&:hover
 			.preview__img
 				img
@@ -204,13 +245,25 @@
 			text-decoration: none
 			.arr-right
 				margin-bottom: 20px
+				position: relative
+				left: 0 
+				+tr(all 200ms)
 			& > div
 				margin-bottom: 25px
 				font-size: 14px
 				text-transform: uppercase
 				color: #fff
 			& > p
-				color: #fab6a6 	  
+				color: #fab6a6 	 
+				+tr(all 200ms) 
+			&:hover
+				.arr-right
+					left: 50px 
+					opacity: 0 
+				div
+					font-weight: bold
+				p
+					color: #fff 
 	&__img
 		position: relative
 		display: block

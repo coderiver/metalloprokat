@@ -167,4 +167,26 @@ head.ready(function() {
     });
   };	
 
+   $(window).on('scroll mousewheel',function(e){
+   	var st = $(this).scrollTop();
+   	if(st>37){
+   		$('body').addClass("is-fixedheader");
+   	}
+   	else{
+   		$('body').removeClass("is-fixedheader");
+   	}
+   });
+
+  $(window).on('scroll mousewheel',function(e){
+      var st = $(this).scrollTop()  
+      , min_fade = 0
+      , max_fade = 0.7
+      , fade_height = 620
+      , fade_step = max_fade / fade_height
+      , current_fade = fade_step * st
+     
+      $('.js-menu-shadow').stop(1,1).animate({opacity: current_fade })
+
+    }) 
+
 });
