@@ -118,7 +118,12 @@
 	background: #fff
 	z-index: 100
 	box-shadow: 0 1px 9px rgba(44,43,42,.34)
-	+tr(opacity 200ms)
+	+transition(opacity 500ms,transform 500ms)
+	// +transform(scale(.5))
+	+transform-origin(50% 0)
+	-webkit-perspective: 1300px
+	-moz-perspective: 1300px
+	perspective: 1300px
 	+r(1500)
 		right: auto
 		width: 660px
@@ -128,6 +133,10 @@
 	&.is-open
 		visibility: visible
 		opacity: 1
+		+transform(scale(1))
+		.preview__list
+			+transform( rotateX(0deg))
+			opacity: 1
 	.preview__item
 		height: 165px
 		width: 110px
@@ -145,6 +154,43 @@
 		font-size: 12px
 		font-weight: 500
 		+tr(color 200ms)   	
+	.preview__list
+		display: table
+		width: 100%
+		border-collapse: collapse
+		-webkit-perspective: none
+		-moz-perspective: none
+		perspective: none
+		-webkit-transform-style: preserve-3d
+		-moz-transform-style: preserve-3d
+		transform-style: preserve-3d
+		+transform( rotateX(30deg))
+		+transform-origin(0 100%)
+		+transition(all 300ms)
+	.preview__row
+		display: table-row
+		-webkit-transform-style: flat
+		-moz-transform-style: flat
+		transform-style: flat
+		+transform(translateY(0) rotateX(0deg))
+		opacity: 1
+		+tr(all 0.3s ease-out)
+.catalog
+	.preview__list
+		display: table
+		width: 100%
+		border-collapse: collapse
+		-webkit-perspective: 0
+		-moz-perspective: 0
+		perspective: 0
+	.preview__row
+		display: table-row
+		-webkit-transform-style: none
+		-moz-transform-style: none
+		transform-style: none
+		+transform(translateY(0) rotateX(0deg))
+		opacity: 1
+		+tr(all 0.3s ease-out)
 .topper
 	position: relative
 	padding-top: 37px
@@ -188,6 +234,10 @@
 		font-size: 14px  	  	
 .preview
 	+wrap
+	.catalog &
+		.preview__row
+			// +gpu
+			+transform(none)
 	&__list
 		display: table
 		width: 100%

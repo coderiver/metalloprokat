@@ -81,6 +81,14 @@ $red: #fb4218
 	overflow-y: auto
 	text-align: center
 	z-index: 999
+	-webkit-perspective: 1300px
+	-moz-perspective: 1300px
+	perspective: 1300px
+	+transform(translate(100%, 0))
+	// display: none
+	&.is-visible
+		display: block
+		+transform(translate(0, 0))
 	i
 		position: fixed
 		top: 0
@@ -95,14 +103,25 @@ $red: #fb4218
 		height: 100%
 		vertical-align: middle
 .popup
-	position: relative
+	position: absolute
 	vertical-align: middle
 	+box
 	background: #fff 
-	display: none
+	// display: none
+	display: inline-block
 	box-shadow: 0 0 19px 2px #000
+	-webkit-transform-style: preserve-3d
+	-moz-transform-style: preserve-3d
+	transform-style: preserve-3d
+	+transform(translateY(100%) rotateX(90deg))
+	+transform-origin(0 100%)
+	opacity: 0
+	+tr(all 0.3s ease-out)
 	&.is-open
 		display: inline-block
+		+transform(translateY(0%) rotateX(0deg))
+		opacity: 1 
+		position: relative
 	&.popup_feedback
 		width: 350px
 		padding: 40px 42px 74px
@@ -184,6 +203,16 @@ $red: #fb4218
 	float: left
 	width: 234px
 	padding-top: 60px
+	min-height: 100px 
+	.is-fixedsidebar &
+		.sidebar__nav
+			position: fixed
+			top: 100px 
+			+transition(all .2s)
+	.is-fixedsidebar-hidden &
+		.sidebar__nav
+			opacity: 0
+			z-index: -1  
 	&__nav
 		li
 			margin-bottom: 10px
