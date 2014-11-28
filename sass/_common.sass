@@ -51,8 +51,24 @@ $red: #fb4218
 	color: #fff
 	text-transform: uppercase
 	+tr(background 200ms)
+	position: relative
+	&:before
+		position: absolute
+		left: 0
+		top: 0
+		height: 100%
+		background: lighten($orange, 10%) 
+		content: ' '
+		z-index: 1
+		width: 0 
+		+tr(width 300ms)
+	span
+		position: relative
+		z-index: 2 
 	&:hover
 		background: darken($orange, 5%) 
+		&:before
+			width: 100% 
 
 //popups
 .overlay

@@ -383,6 +383,7 @@
 					position: relative
 					display: inline-block
 					line-height: 1
+					z-index: 2 
 					&:after
 						content: ""
 						position: absolute
@@ -390,7 +391,21 @@
 						right: -20px
 						+s(link)
 				&:hover
-					border-color: $red		 			
+					border-color: $red	
+					&:after
+						width: 100% 
+					span
+						color: #fff 
+				&:after
+					content: ' '	 			
+					position: absolute
+					left: 0
+					top: 0
+					width: 0
+					height: 100%    
+					z-index: 1 
+					background: $orange
+					+tr(all 300ms) 
 .m-post
 	span
 		display: inline-block
