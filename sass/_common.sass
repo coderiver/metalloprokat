@@ -84,11 +84,18 @@ $red: #fb4218
 	-webkit-perspective: 1300px
 	-moz-perspective: 1300px
 	perspective: 1300px
-	+transform(translate(100%, 0))
+	// +transform(translate(0,600px))
+	+transition(all .3s linear)
 	// display: none
-	&.is-visible
+	display: none 
+	opacity: 0 
+	&.is-shown
 		display: block
-		+transform(translate(0, 0))
+	&.is-visible
+		// display: block
+		// +transform(translate(0, 0))
+		// display: block
+		opacity: 1 
 	i
 		position: fixed
 		top: 0
@@ -103,7 +110,7 @@ $red: #fb4218
 		height: 100%
 		vertical-align: middle
 .popup
-	position: absolute
+	// position: absolute
 	vertical-align: middle
 	+box
 	background: #fff 
@@ -355,6 +362,8 @@ $red: #fb4218
 		border: 1px solid #d8d8d8
 		vertical-align: middle
 		text-align: center 	
+		min-height: 150px 
+		height: 150px 
 
 
 

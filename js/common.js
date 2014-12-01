@@ -8,6 +8,8 @@ head.ready(function() {
 	}, 700);
 	
 
+	
+
 // popups
 
 	$('.overlay i').on('click', function(){
@@ -19,6 +21,9 @@ head.ready(function() {
 		// }, 300);
 		$('.overlay').removeClass('is-visible');
 		$('body').removeClass('no-scroll');
+		setTimeout(function(){
+			$('.overlay').removeClass('is-shown');
+		}, 300);
 	});
 
 	$('.popup__close').on('click', function(){
@@ -28,23 +33,39 @@ head.ready(function() {
 	});
 	
 	$('.js-call').on('click', function(){
-		$('.overlay').addClass('is-visible');
-		$('.popup_feedback').addClass('is-open');
+
+		$('.popup-feedback').addClass('is-shown');
 		$('body').addClass('no-scroll');
+
+		setTimeout(function(){
+			$('.popup-feedback').addClass('is-visible');
+			$('.popup_feedback').addClass('is-open');
+		}, 100);
+		
+		
 		return false;
 	});
 
 	$('.js-order').on('click', function(){
-		$('.overlay').addClass('is-visible');
-		$('.popup_order').addClass('is-open');
+
+		$('.popup-order').addClass('is-shown');
 		$('body').addClass('no-scroll');
+
+		setTimeout(function(){
+			$('.popup-order').addClass('is-visible');
+			$('.popup_order').addClass('is-open');
+		}, 100);
 		return false;
 	});
 
 	$('.js-vacancy').on('click', function(){
-		$('.overlay').addClass('is-visible');
-		$('.popup_vacancy').addClass('is-open');
+		$('.popup-vacancy').addClass('is-shown');
 		$('body').addClass('no-scroll');
+
+		setTimeout(function(){
+			$('.popup-vacancy').addClass('is-visible');
+			$('.popup_vacancy').addClass('is-open');
+		}, 100);
 		return false;
 	});
 
@@ -55,6 +76,7 @@ head.ready(function() {
 			var form_this = $(this);
 			$.validate({
 				form : form_this
+				// @TODO Google: validation dont scroll to mistake
 			});
 		});
 	};
@@ -153,7 +175,7 @@ head.ready(function() {
       var myMap = new ymaps.Map('YMapsID', {
           center: [55.840975, 37.487421],
           zoom: 16,
-          controls: []
+          controls: [] //@todo insert controls list
       });
      // Создаем метку с помощью вспомогательного класса.
         myPlacemark1 = new ymaps.Placemark([55.840975, 37.487421], {
@@ -180,13 +202,28 @@ head.ready(function() {
    	else{
    		$('body').removeClass("is-fixedheader");
    	}
-   	if(st>$('.sidebar').offset().top - 46){
-   		$('body').addClass("is-fixedsidebar");
+   	if($('.sidebar').length>0){
+	   	if(st>$('.sidebar').offset().top - 46){
+	   		$('body').addClass("is-fixedsidebar");
+	   	}
+	   	else{
+	   		$('body').removeClass("is-fixedsidebar");
+	   	}
    	}
-   	else{
-   		$('body').removeClass("is-fixedsidebar");
+
+   	if($('.product__fixme').length>0){
+	   	if(st>$('.product__left').offset().top - 146){
+	   		$('body').addClass("is-fixed-product");
+	   	}
+	   	else{
+	   		$('body').removeClass("is-fixed-product");
+	   	}
    	}
-   	if(st>$('.delivery').offset().top - 250){
+
+
+
+   	
+   	if(st>$('.delivery').offset().top - 350){
    		$('body').addClass("is-fixedsidebar-hidden");
    	}
    	else{
@@ -202,8 +239,14 @@ head.ready(function() {
       , fade_step = max_fade / fade_height
       , current_fade = fade_step * st
      
-      $('.js-menu-shadow').stop(1,1).animate({opacity: current_fade })
+      $('.js-menu-shadow').css({opacity: current_fade })
 
     }) 
+
+  // sizing
+  $('.s__top tr:last-child th').each(function(index, el) {
+  	console.log($(this).width());
+  	$('.s__bottom td').eq(index).width($(this).width());
+  });
 
 });

@@ -115,7 +115,7 @@
 				<li>
 					<a href="#" class="callback-link js-call">Обратный звонок</a>
 				</li>
-				<li>
+				<li class="header__phone">
 					<p>+7 499 704-28-63</p>
 				</li>
 			</ul>
@@ -140,10 +140,12 @@
 					<div class="catalog">
 						<div class="product">
 							<div class="product__left">
-								<div class="product__img">
-									<img src="img/prod1.png" alt="">
+								<div class="product__fixme">
+									<div class="product__img">
+										<img src="img/prod1.png" alt="">
+									</div>
+									<button class="btn"><span>Отправить запрос</span></button>
 								</div>
-								<button class="btn"><span>Отправить запрос</span></button>
 							</div>
 							<div class="product__right">
 									<article class="product__article">
@@ -273,7 +275,7 @@
 	<!-- END footer -->
 </div>
 <!-- END out-->
-<div class="overlay" >
+<div class="overlay popup-feedback" >
 	<i></i>
 	<div class="popup popup_feedback">
 		<div class="popup__close"></div>
@@ -298,6 +300,9 @@
 			</form>
 		</div>
 	</div>
+</div>
+<div class="overlay popup-order">
+	<i></i>
 	<div class="popup popup_order">
 		<div class="popup__close"></div>
 		<h3 class="h3">заказать металлопрокат</h3>

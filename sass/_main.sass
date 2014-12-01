@@ -18,11 +18,12 @@
 	margin: 0 auto 0
 	background: rgba(#295189, 0.9)
 	height: 60px
-	z-index: 20 
+	z-index: 200
 	position: fixed
-	left: 0
+	left: 20px
 	top: 37px
-	right: 0 
+	right: 20px
+	min-width: 1000px 
 	// .is-fixedheader &
 	// 	position: fixed
 	// 	left: 0
@@ -35,15 +36,21 @@
 		li
 			float: left
 			height: 60px
-			padding: 19px 30px 0
+			// padding: 19px 30px 0
 			+box
 			border-left: 1px solid #426290
 			font-size: 15px
 			color: #fff 
-			+r(1280)
-				padding: 19px 20px 0
-			+r(1100)
-				padding: 19px 10px 0 	 
+			// +r(1280)
+			// 	padding: 19px 20px 0
+			// +r(1100)
+			// 	padding: 19px 10px 0 
+	.header__phone
+		padding: 19px 30px 0
+		+r(1280)
+			padding: 19px 20px 0
+		+r(1100)
+			padding: 19px 10px 0 
 .catalog-link, .callback-link 
 	position: relative
 	display: inline-block
@@ -53,17 +60,26 @@
 	text-transform: uppercase
 	color: #fff
 	+tr(opacity 200ms)
+	height: 60px 
+	line-height: 60px 
+	padding-right: 30px 
 	&:before
 		content: ""
-		position: absolute
-		top: 3px
-		left: 0
+		// position: absolute
+		// top: 3px
+		// left: 0
+		vertical-align: middle
+		display: inline-block
+		margin-right: 6px 
+		position: relative
+		top: -2px 
 		+s(catalog)
 	&:hover
 		opacity: 0.5
 .callback-link
 	&:before
-		+s(callback)				  
+		+s(callback)	
+		top: -2px 			  
 .logo
 	position: relative 
 	float: left
@@ -96,7 +112,8 @@
 		color: #fff
 		text-decoration: none
 		+transition(color 200ms, background 200ms)
-		z-index: 101
+		z-index: 201
+		+gpu
 		+r(1280)
 			padding: 0 10px
 		+r(1100)
@@ -114,20 +131,21 @@
 			color: #254e84		
 .dropdown
 	visibility: hidden
-	opacity: 0
+	// opacity: 0
 	position: absolute
 	top: 60px
 	left: 180px
 	right: 0					  
 	background: #fff
-	z-index: 100
+	// z-index: 100
 	box-shadow: 0 1px 9px rgba(44,43,42,.34)
-	+transition(opacity 500ms,transform 500ms)
+	// +transition(all 100ms)
 	// +transform(scale(.5))
 	+transform-origin(50% 0)
 	-webkit-perspective: 1300px
 	-moz-perspective: 1300px
 	perspective: 1300px
+	// z-index: -1 
 	+r(1500)
 		right: auto
 		width: 660px
@@ -136,11 +154,14 @@
 			+clr
 	&.is-open
 		visibility: visible
+		// z-index: 100 
 		opacity: 1
 		+transform(scale(1))
+		// +transition(all 100ms)
 		.preview__list
 			+transform( rotateX(0deg))
 			opacity: 1
+			+transition(all 300ms)
 	.preview__item
 		height: 165px
 		width: 110px
@@ -157,7 +178,8 @@
 		line-height: 1.2
 		font-size: 12px
 		font-weight: 500
-		+tr(color 200ms)   	
+		+tr(color 200ms)   
+			
 	.preview__list
 		display: table
 		width: 100%
@@ -171,6 +193,7 @@
 		+transform( rotateX(30deg))
 		+transform-origin(0 100%)
 		+transition(all 300ms)
+		opacity: 0 
 	.preview__row
 		display: table-row
 		-webkit-transform-style: flat
@@ -179,6 +202,7 @@
 		+transform(translateY(0) rotateX(0deg))
 		opacity: 1
 		+tr(all 0.3s ease-out)
+		+transition(none)
 .catalog
 	.preview__list
 		display: table
@@ -220,7 +244,8 @@
 	text-transform: uppercase
 	margin-bottom: 135px
 	z-index: 10
-	position: relative 
+	position: relative
+	+gpu 
 	&.is-loaded
 		opacity: 1
 	& > p
@@ -264,14 +289,21 @@
 			opacity: 1 
 	&__item		
 		position: relative
-		display: table-cell
+		// display: table-cell
 		// border: 1px solid #eaeaea
 		box-shadow: inset 1px 0 0 #eaeaea
 		text-align: center
 		background: #fff
+		width: 163px 
+		float: left
+		
+		// width: 16.8% 
+		// overflow: hidden
 		// -webkit-transform-style: preserve-3d
 		// -moz-transform-style: preserve-3d
 		// transform-style: preserve-3d
+		.preview &
+			min-height: 292px 
 		&:hover
 			.preview__img
 				img
@@ -297,6 +329,7 @@
 			vertical-align: top
 			text-align: left
 			text-decoration: none
+			width: 165px 
 			.arr-right
 				margin-bottom: 20px
 				position: relative
@@ -450,6 +483,8 @@
 						width: 100% 
 					span
 						color: #fff 
+						&:after
+							+s(link1)
 				&:after
 					content: ' '	 			
 					position: absolute
@@ -506,6 +541,10 @@
 	&__mid
 		overflow: hidden
 		padding: 0 20px
+		ul:first-child
+			
+		.delivery__title + ul
+			margin-left: 0 !important 
 		& > ul
 			float: left
 			width: 170px
