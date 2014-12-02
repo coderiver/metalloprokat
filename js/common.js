@@ -75,7 +75,8 @@ head.ready(function() {
 		form_validate.each(function () {
 			var form_this = $(this);
 			$.validate({
-				form : form_this
+				form : form_this,
+ focusInvalid:false
 				// @TODO Google: validation dont scroll to mistake
 			});
 		});
@@ -175,7 +176,7 @@ head.ready(function() {
       var myMap = new ymaps.Map('YMapsID', {
           center: [55.840975, 37.487421],
           zoom: 16,
-          controls: [] //@todo insert controls list
+          controls: ['zoomControl'] 
       });
      // Создаем метку с помощью вспомогательного класса.
         myPlacemark1 = new ymaps.Placemark([55.840975, 37.487421], {

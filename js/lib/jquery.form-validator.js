@@ -618,7 +618,7 @@
                     field: '<li>{msg}</li>'
                 },
                 errorMessageCustom: _templateMessage,
-                scrollToTopOnError : true,
+                scrollToTopOnError : false,
                 dateFormat : 'yyyy-mm-dd',
                 addValidClassOnAll : false, // whether or not to apply class="valid" even if the input wasn't validated
                 decimalSeparator : '.'
