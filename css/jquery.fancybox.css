@@ -16,7 +16,9 @@
 	outline: none;
 	vertical-align: top;
 }
-
+.fancybox-margin {
+	margin: 0 auto!important;
+}
 .fancybox-wrap {
 	position: absolute;
 	top: 0;
