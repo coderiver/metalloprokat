@@ -142,6 +142,10 @@ head.ready(function() {
              $(this).parent().addClass("is-active");
              tab_cont.hide();
              $(this).parents(".js-tab-group").find("."+index).show();
+             if ($(this).parents(".js-tab-group").find("."+index).find('.js-scroll').length) {
+             	$(this).parents(".js-tab-group").find("."+index).find('.js-scroll').jScrollPane();
+             	alert();
+             }
              return false;
           });
        });
